@@ -1,20 +1,27 @@
 import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { registerRootComponent } from 'expo';
-import { StyleSheet, Text, View } from 'react-native';
+
+import Dashboard from './screens/Dashboard/index';
+import Login from './screens/Login/index';
+
+import colors from './theme/colors';
+
+if (__DEV__) {
+  import('../ReactotronConfig').then(() => console.log('Reactotron Configured'));
+}
 
 const styles = StyleSheet.create({
-  container: {
+  app: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: colors.background,
   },
 });
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open UP App.tsx to start working on your app!</Text>
+    <View style={styles.app}>
+      <Login />
     </View>
   );
 }
