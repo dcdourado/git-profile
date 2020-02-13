@@ -23,7 +23,8 @@
     "react/jsx-uses-vars": "error",
     "prettier/prettier": "error",
     "import/extensions": ["error", "never"],
-    "global-require": "off"
+    "global-require": "off",
+    "no-console": "off"
   },
   "settings": {
     "import/resolver": {
