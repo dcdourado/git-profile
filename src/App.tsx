@@ -1,8 +1,13 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import { registerRootComponent } from 'expo';
 
-import Dashboard from './screens/Dashboard/index';
+import store from './store/index';
+
+import LoadingGateway from './gateways/Loading';
+
+// import Dashboard from './screens/Dashboard/index';
 import Login from './screens/Login/index';
 
 import colors from './theme/colors';
@@ -18,12 +23,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function App() {
-  return (
+const App = () => (
+  <Provider store={store}>
+    <LoadingGateway />
     <View style={styles.app}>
       <Login />
     </View>
-  );
-}
+  </Provider>
+);
 
 registerRootComponent(App);
+
+export default App;

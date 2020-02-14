@@ -24,7 +24,8 @@
     "prettier/prettier": "error",
     "import/extensions": ["error", "never"],
     "global-require": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-return-assign": "off"
   },
   "settings": {
     "import/resolver": {
