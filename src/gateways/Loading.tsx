@@ -7,7 +7,11 @@ import { RootState } from '../store/index';
 import LoadingWheel from '../components/LoadingWheel';
 
 const styles = StyleSheet.create({
-  center: {},
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    bottom: '34%',
+  },
 });
 
 const Loading: React.FC = () => {

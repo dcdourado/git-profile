@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { View, Text, StyleSheet } from 'react-native';
 
 import api from '../../services/api';
-
-import { request, success, failure } from '../../store/ducks/loading';
 
 import Avatar from '../../components/Avatar/index';
 import TextInput from '../../components/TextInput/index';
@@ -33,22 +30,13 @@ const styles = StyleSheet.create({
 const Login = () => {
   const [user, setUser] = useState<string>('');
 
-  const dispatch = useDispatch();
-
   const handleUserChange = (text: string) => {
     setUser(text);
   };
 
   const handleUserSearchPress = async () => {
-    try {
-      dispatch(request());
-      const response = await api.get(`/users/${user}`);
-      dispatch(success());
-      console.log(response!.data);
-    } catch (error) {
-      dispatch(failure());
-      throw new Error(error);
-    }
+    const response = await api.get(`/users/${user}`);
+    console.log(response.data);
   };
 
   return (

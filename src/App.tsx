@@ -25,9 +25,9 @@ const styles = StyleSheet.create({
 
 const App = () => (
   <Provider store={store}>
-    <LoadingGateway />
     <View style={styles.app}>
       <Login />
+      <LoadingGateway />
     </View>
   </Provider>
 );
