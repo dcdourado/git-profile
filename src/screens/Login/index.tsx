@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 import api from '../../services/api';
 
